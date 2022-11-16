@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoke Detector</title>
+    <style>
+        body {
+            background-image: url('bg.jpg');
+            color: white;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            max-width: 100%;
+            z-index: 1;
+            text-align: center;
+            background-color: black;
+            padding: 20px;
+        }
+
+        .header-cnt h1 img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50px;
+            margin-right: 10px;
+        }
+        
+        .header-cnt h1 {
+            padding: 10px 20px;
+            display: inline;
+            font-size: 40px;
+            border: 5px solid white;
+            border-radius: 50px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .header-cnt h1 a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 10%;
+            text-align: center;
+        }
+
+        .banner-text h1 {
+            font-size: 70px;
+        }
+
+        article {
+            margin: 5px 10px;
+            text-align: left;
+            font-size: 20px;
+        }
+
+        article p::selection {
+            background-color: white;
+            color: black;
+        }
+
+        article p a {
+            color: white;
+            text-decoration: none;
+        }
+
+        article p a:hover {
+            color: royalblue;
+            text-decoration: underline;
+            background-color: white;
+        }
+        
+        /* Button */
+        .button {
+            margin: 5px 0px;
+            text-align: center;
+        }
+        button {
+            font-size: 20px;
+            width: 15%;
+            padding: 5px 5px;
+            border-radius: 20px;
+            color: white;
+            background-color: black;
+            border: 5px solid white;
+        }
+
+        /* Model Prediction */
+        .answer {
+            text-align: center;
+            margin: 10px 5px;
+        }
+
+        /* Form */
+        .form-holder {
+            margin-left: 20%;
+            margin-top: 3%;
+        }
+        .form-holder form{
+            font-size: 20px;
+            border-radius: 30px;
+            width: 70%;
+            padding: 30px;
+            background-color: #020403;
+        }
+
+        form label{
+            letter-spacing: 2px;
+            margin: 10px 0px;
+        }
+
+        form input {
+            margin: 10px 0px;
+            margin-left: 20px;
+            width: 90%;
+            height: 30px;
+            border-radius: 20px;
+            padding: 0px 10px;
+            font-size: 20px;
+            color: white;
+            background-color: black;
+            border: 4px solid white;
+        }
+        
+        /* Footer */
+        footer {
+            position: fixed;
+            height: 25px;
+            width: 100%;
+            text-align: center;
+            left: 0px;
+            bottom: 0px;
+            background-color: black;
+            opacity: 0.5;
+        }
+
+        footer h1 {
+            font-size: 15px;
+            margin: 2px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Heading of the page -->
+    <header>
+        <div class="header-cnt">
+            <h1><a href="https://www.kaggle.com/utkarshsaxenadn"><img src="logo.png" alt="Deep-Nets-Logo"></a>
+                <a href="https://www.kaggle.com/utkarshsaxenadn">DeepNets</a></h1>
+        </div>
+    </header>
+
+    <!-- Model Information -->
+    <main>
+        <div class="banner-text">
+            <h1>Smoke Detector</h1>
+        </div>
+
+        <article>
+            <p>
+                This is a Dense Neural Network model trained on the Smoke Detection
+                    Dataset. The model achieved and training and validation accuracy of 99%,
+                with
+                a significantly low loss of 0.001. The F1 score, Precision and Recall
+                of
+                the model are 99%. More detailed information about the model is available in the <a
+                    href="https://www.kaggle.com/code/utkarshsaxenadn/smoke-detection-dense-network-acc-99-98">Kaggle
+                    Notebook.</a>
+            </p>
+
+        </article>
+    </main>
+    <div class="form-holder">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="temp">Temperature(C°)</label>
+            <br>
+            <input type="text" name="temp">
+            <br>
+
+            <label for="hum">Humidity(%)</label>
+            <br>
+            <input type="text" name="hum">
+            <br>
+
+            <label for="tvoc">TVOC(ppb)</label>
+            <br>
+            <input type="text" name="tvoc">
+            <br>
+
+            <label for="eCO2">eCO2(ppm)</label>
+            <br>
+            <input type="text" name="eCO2">
+            <br>
+            
+            <label for="rawh2">Raw H2</label>
+            <br>
+            <input type="text" name="rawh2">
+            <br>
+
+            <label for="rawet">Raw Ethanol</label>
+            <br>
+            <input type="text" name="rawet">
+            <br>
+
+            <label for="pres">Pressure(hPa)</label>
+            <br>
+            <input type="text" name="pres">
+            <br>
+
+            <label for="pm1">PM 1.0</label>
+            <br>
+            <input type="text" name="pm1">
+            <br>
+
+            <label for="pm2.5">PM 2.5</label>
+            <br>
+            <input type="text" name="pm2.5">
+            <br>
+
+            <label for="nc0.5">NC 0.5</label>
+            <br>
+            <input type="text" name="nc0.5">
+            <br>
+
+            <label for="nc1">NC 1.0</label>
+            <br>
+            <input type="text" name="nc1">
+            <br>
+
+            <label for="nc2.5">NC 2.5</label>
+            <br>
+            <input type="text" name="nc2.5">
+            <br>
+
+            <label for="cnt">CNT</label>
+            <br>
+            <input type="text" name="cnt">
+            <br>
+
+            <div class="button">
+                <button type="submit">Predict</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="answer">
+        <h1>
+            Fire Alarm : {% if pred%} {{pred}} {% endif %}
+        </h1>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <h1>The model is created by <code>DeepNets</code></h1>
+    </footer>
+</body>
+
+</html>
