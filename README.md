@@ -1,6 +1,5 @@
 # Smoke-Detector-Django
 
----
 This is a Web Deployment of the Smoke Detector, a Dense Neural Network Model. The model had an Training Accuracy of 99.98%, a Validation Accuracy of 99.97%, and Testing Accuracy of 0.9996%. 
 
 This is also available on Kaggle : 
